@@ -8,6 +8,12 @@ BarrierScope is an interrupt side channel attack that exploits IBPB mitigation a
 ## Tested Setup
 
 ### Software dependencies
+In order to run the experiments and proof-of-concepts, the following prerequisites need to be fulfilled:
+
+- Linux installation
+  - Build tools (gcc, make)
+  - Python 3
+- Browsers (for website fingerprinting)
 
 ### Hardware dependencies
 
