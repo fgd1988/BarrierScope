@@ -5,10 +5,18 @@ This repository contains the experiments of evaluation and case studies discusse
   
 BarrierScope is an interrupt side channel attack that exploits IBPB mitigation as a detectable footprint for detecting precise interrupts on AMD processors.
 
-##Tested Setup
+## Tested Setup
+
+### Software dependencies
+
+### Hardware dependencies
 
 
+## Materials
 
 ## Contact
 
 If there are questions regarding these experiments, please send an email to `yfgao25@stu.pku.edu.cn`.
+
+
+## How should I cite this work?
