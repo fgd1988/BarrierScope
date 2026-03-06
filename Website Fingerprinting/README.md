@@ -13,23 +13,23 @@ gcc -c -fPIC -o tick.o tick.c
 gcc -shared tick.o -o tick.so
 ```
 
-Record 20 5000-interrupt traces of the top 4 websites according to Alexa, and save the traces to segscope-experiment. Three absolute paths in record_data.py need to be modified in record_data.py.
+Record 20 5000-interrupt traces of the top 4 websites according to Alexa, and save the traces to barrierscope-experiment. Three absolute paths in record_data.py need to be modified in record_data.py.
 ```
-python record_data.py --browser chrome --num_runs 20 --attacker_type tick --sites_list alexa4 --trace_length 5  --out_directory segscope-experiment
+python record_data.py --browser chrome --num_runs 20 --attacker_type tick --sites_list alexa4 --trace_length 5  --out_directory barrierscope-experiment
 ```
 
 Load the traces and check accuracy.
 ```
-python scripts/check_results.py --data_file segscope-experiment
+python scripts/check_results.py --data_file barrierscope-experiment
 ```
 
 Expected results are as follows:
 ```
-python record_data.py --browser chrome --num_runs 20 --attacker_type tick --sites_list alexa4 --trace_length 5  --out_directory segscope-experiment
+python record_data.py --browser chrome --num_runs 20 --attacker_type tick --sites_list alexa4 --trace_length 5  --out_directory barrierscope-experiment
 
 100%|█████████████████████████████████████████| 160/160 [43:10<00:00,  16.16s/it]
 
-python scripts/check_results.py --data_file segscope-experiment
+python scripts/check_results.py --data_file barrierscope-experiment
 
 Analyzing results from readme-experiment
 100%|███████████████████████████████████████████| 10/10 [00:01<00:00,  5.61it/s]
