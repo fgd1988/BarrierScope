@@ -23,7 +23,7 @@ int main() {
 
     FILE *logfile;
     char filename[100];
-    snprintf(filename, sizeof(filename), "keylog_rdtscp.txt"); // 文件名可以根据需要修改
+    snprintf(filename, sizeof(filename), "keylog_rdtscp.txt"); 
     logfile = fopen(filename, "w");
     if (logfile == NULL) {
         perror("Error opening file");
