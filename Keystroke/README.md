@@ -1,3 +1,4 @@
+推荐使用微秒us的这个，记录的内核生成的keystroke事件的时间戳，rdtsc的这个时间有us级误差
 # Keystroke Detection
 We demonstrate how BarrierScope can be leveraged to detect keyboard interrupts and recover the inter-keystroke timing information from the detected interrupts.
 We note that we do not directly infer text from our BarrierScope-based measurements but instead use them to determine the channel quality by comparing our measurements with the keystroke-timing ground truth. After obtaining the interrupt timing information, the attackers can use a series of orthogonal techniques to recover text.
