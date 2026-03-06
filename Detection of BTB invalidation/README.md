@@ -11,23 +11,16 @@ pip install -r requirements.txt
 Take it one step at a time:
 ```
 ## How to Run
-```
-$ make
-$ ./spectrev2
-```
-...output...
-
 Build our code
 ```
 make
 ```
-
 Quick test for the attack. Every second it outputs the leakage rate, error rate, and true capacity. An optional parameter can be provided to stop the experiment after N seconds: ./main N. If this parameter is provided, it outputs the last leakage rate, error rate, and true capacity as CSVs.
 ```
-./main
+./detection
 ```
-
 Expected results are as follows. The program outputs the error rate of original spectral(%), speed, channel_capacity, number of interrupted measuments, and the error rate of our **enhanced spectral**(%). Clearly, SegScope reduces the error rate from 0.559% to 0.098%.
+...output...
 ```
 0.559,53889,51200.8,irq=750 ,after_filter:0.098
 ```
