@@ -50,7 +50,7 @@ void write_ia32_pred_cmd() {
 }*/
 
 int bind_to_cpu(int cpu_core) {
-      unsigned long mask = 1UL << cpu_core;  // 第cpu_core位置1
+      unsigned long mask = 1UL << cpu_core;  
     // syscall
     if (syscall(SYS_sched_setaffinity, 0, sizeof(mask), &mask) == -1) {
         perror("bind fail");
@@ -78,11 +78,7 @@ int safe_target()
 int victim(char *addr, int input)
 {
   int junk = 0;
-  // set up branch history buffer (bhb) by performing >29 taken branches
-  // see https://googleprojectzero.blogspot.com/2018/01/reading-privileged-memory-with-side.html
-  //   for details about how the branch prediction mechanism works
-  // junk and input used to guarantee the loop is actually run
-  for (int i = 1; i <= 100; i++) {
+    for (int i = 1; i <= 100; i++) {
     input += i;
     junk += input & i;
   }
