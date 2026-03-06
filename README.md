@@ -13,6 +13,7 @@ In order to run the experiments and proof-of-concepts, the following prerequisit
 - Linux installation
   - Build tools (gcc, make)
   - Python 3
+  - Linux versions above 6.1 for AMD
 - Browsers (for website fingerprinting)
   - [Chrome Browser](https://example.com).
   - You also need to install the drivers for the browsers you would like to use.
