@@ -16,7 +16,6 @@ Quick test for the attack.
 sudo ./detection
 ```
 Expected results are as follows. 
-...output...
 ```
 Progress: 100/1000 attempts completed. Current success rate: 100.00%
 Progress: 200/1000 attempts completed. Current success rate: 99.00%
@@ -39,21 +38,5 @@ In each successful attack, the predicted character should be 'C' (ASCII: 67).
 
 ```
 
-
-Evaluate the leakage rate for different umwait timeouts from 1000 to 200000. The result is stored in log.csv.
-```
-./test.sh
-```
-
-Expected results are as follows:
-```
-
-```
-
 In our previous experiments, we found that 
 
-```
-gcc arch-write.c -lpthread -o arch -static -lm -O0
-
-./arch
-```
