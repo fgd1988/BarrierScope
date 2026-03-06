@@ -5,24 +5,38 @@ In our attack code, we placed `jmp` instructions for mistraining at the same vir
 We chose `jmp` instruction for the reason that, unlike a return instruction, there were no adjacent operations that might un-evict the return address (e.g., by accessing the stack) and limit speculative execution. 
 In order to get the victim to speculatively execute the gadget, we caused the memory location containing the jump destination to be uncached. In addition, we mistrained the branch predictor to send speculative execution to the gadget.
 
-## Install dependencies.
-```bash
-pip install -r requirements.txt
-Take it one step at a time:
-```
+
 ## How to Run
 Build our code
 ```
 make
 ```
-Quick test for the attack. Every second it outputs the leakage rate, error rate, and true capacity. An optional parameter can be provided to stop the experiment after N seconds: ./main N. If this parameter is provided, it outputs the last leakage rate, error rate, and true capacity as CSVs.
+Quick test for the attack. 
 ```
-./detection
+sudo ./detection
 ```
-Expected results are as follows. The program outputs the error rate of original spectral(%), speed, channel_capacity, number of interrupted measuments, and the error rate of our **enhanced spectral**(%). Clearly, SegScope reduces the error rate from 0.559% to 0.098%.
+Expected results are as follows. 
 ...output...
 ```
-0.559,53889,51200.8,irq=750 ,after_filter:0.098
+Progress: 100/1000 attempts completed. Current success rate: 100.00%
+Progress: 200/1000 attempts completed. Current success rate: 99.00%
+Progress: 300/1000 attempts completed. Current success rate: 99.33%
+Progress: 400/1000 attempts completed. Current success rate: 98.25%
+Progress: 500/1000 attempts completed. Current success rate: 98.40%
+Progress: 600/1000 attempts completed. Current success rate: 98.67%
+Progress: 700/1000 attempts completed. Current success rate: 98.86%
+Progress: 800/1000 attempts completed. Current success rate: 98.88%
+Progress: 900/1000 attempts completed. Current success rate: 99.00%
+Progress: 1000/1000 attempts completed. Current success rate: 99.10%
+----------------------------------------
+Attack completed!
+Total attempts: 1000
+Successful attempts: 991
+Success rate: 99.10%
+----------------------------------------
+Note: The target character is 'C' (ASCII: 67).
+In each successful attack, the predicted character should be 'C' (ASCII: 67).
+
 ```
 
 
@@ -33,22 +47,10 @@ Evaluate the leakage rate for different umwait timeouts from 1000 to 200000. The
 
 Expected results are as follows:
 ```
-93000,0.513,57350,54690.3,irq=735 ,after_filter:0.099
-94000,0.478,56791,54306.1,irq=689 ,after_filter:0.101
-95000,0.415,56085,53908.9,irq=673 ,after_filter:0.099
-96000,0.487,55597,53128.1,irq=728 ,after_filter:0.066
-97000,0.485,54989,52555.1,irq=724 ,after_filter:0.065
-98000,0.450,54529,52263.2,irq=673 ,after_filter:0.099
-99000,0.455,54238,51961.2,irq=673 ,after_filter:0.098
-100000,0.559,53889,51200.8,irq=750 ,after_filter:0.098
-101000,0.561,52909,50263.6,irq=745 ,after_filter:0.098
-102000,0.486,52575,50242.5,irq=719 ,after_filter:0.066
-103000,0.540,51989,49468.4,irq=728 ,after_filter:0.096
-104000,0.567,51780,49166.2,irq=741 ,after_filter:0.101
-105000,0.548,51431,48907.2,irq=748 ,after_filter:0.064
+
 ```
 
-In our previous experiments, we found that the speculation window is not long enough in certain CPU to complete a transient write (such as modifying a cacheline). These CPUs are unlikely to reproduce original Spectral attack. However, arch-write.c can be used to test how segscope can filter the interrupted measurements. In arch-write.c, we directly modify the corresponding cacheline based on the secret value.
+In our previous experiments, we found that 
 
 ```
 gcc arch-write.c -lpthread -o arch -static -lm -O0
