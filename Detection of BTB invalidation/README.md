@@ -1,9 +1,13 @@
 # Detection of BTB invalidation
 
-Uses BarrierScope to detect BTB invalidation. The BTB manipulations are performed by executing the \texttt{jmp} or \texttt{ret} instruction.
+Uses BarrierScope to detect BTB invalidation. The BTB manipulations are performed by executing the jmp or ret instruction.
 In our attack code, we we placed \texttt{jmp} instructions for mistraining at the same virtual address in the attacker as in the victim process. 
 We chose \texttt{jmp} instruction for the reason that, unlike a return instruction, there were no adjacent operations that might un-evict the return address (e.g., by accessing the stack) and limit speculative execution. 
 In order to get the victim to speculatively execute the gadget, we caused the memory location containing the jump destination to be uncached. In addition, we mistrained the branch predictor to send speculative execution to the gadget.
+
+`jmp` or `ret` inst[...]
+
+`jmp` instructions f[...]
 
 ## Install dependencies.
 ```bash
@@ -11,15 +15,11 @@ pip install -r requirements.txt
 Take it one step at a time:
 ```
 ## How to Run
+```
 $ make
 $ ./spectrev2
+```
 ...output...
-```
-If you see the secret phrase, that means the demo worked! If not, the code might
-not be set up correctly for your system. Feel free to leave a GitHub issue, or
-submit a pull request if you were able to fix it.
-```
-.
 
 Build our code
 ```
