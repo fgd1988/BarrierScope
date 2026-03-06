@@ -30,9 +30,9 @@ Throughout our experiments, we successfully evaluated our implementations on the
 ## Materials
 This repository contains the following materials:
 
-- **E1-Website Fingerprinting**: contains the code that we apply SegScope to detect interrupts while opening a website.
-- **E2-Enhancing Spectral attack**: contains the code that we use SegScope to enhance a non-interrupt side channel attack (i.e., [spectral](https://example.com)).
-- **E3-Breaking KASLR**: contains the code that we rely on SegScope-based timer to derandomize KASLR.
+- **E1-Detection of BTB invalidation**: contains the code that we apply BarrierScope to detect interrupts while opening a website.
+- **E2-Keystroke Detection**: contains the code that we use BarrierScope to enhance a non-interrupt side channel attack (i.e., [spectral](https://example.com)).
+- **E3-Website Fingerprinting**: contains the code that we rely on BarrierScope-based timer to derandomize KASLR.
 
 ## Contact
 
