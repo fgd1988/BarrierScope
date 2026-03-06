@@ -5,8 +5,7 @@ In our attack code, we placed `jmp` instructions for mistraining at the same vir
 We chose `jmp` instruction for the reason that, unlike a return instruction, there were no adjacent operations that might un-evict the return address (e.g., by accessing the stack) and limit speculative execution. 
 In order to get the victim to speculatively execute the gadget, we caused the memory location containing the jump destination to be uncached. In addition, we mistrained the branch predictor to send speculative execution to the gadget.
 
-
-pid_t pid = syscall(SYS_getpid); 
+We utilize `syscall` to examine the effectiveness of our BTB invalidation detection code. In file `detetion`, code without the insertion of `syscall` results in a high success rate, while the code with a `syscall` insertion in file `detetion_invalidation` results in a low success rate because of the invalidation of BTB.
 
 ## How to Run
 Build our code
@@ -37,6 +36,18 @@ Success rate: 99.10%
 ----------------------------------------
 Note: The target character is 'C' (ASCII: 67).
 In each successful attack, the predicted character should be 'C' (ASCII: 67).
+
+
+
+In `detetion_invalidation.c`, we insert `syscall` to invalidate the BTB.
+```
+pid_t pid = syscall(SYS_getpid);
+```
+Build code and test.
+```
+make
+sudo ./detection
+```
 
 ```
 Expected results are as follows. 
