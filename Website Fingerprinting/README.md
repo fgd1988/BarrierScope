@@ -1,4 +1,4 @@
-# Fingerprinting Websites
+# Website Fingerprinting
 
 Uses BarrierScope to perform a classic interrupt side channel attack (i.e., website fingerprinting).
 
