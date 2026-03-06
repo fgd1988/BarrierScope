@@ -46,7 +46,7 @@ pid_t pid = syscall(SYS_getpid);
 Build code and test.
 ```
 make
-sudo ./detection
+sudo ./detection_invalidation
 ```
 
 
@@ -75,5 +75,4 @@ Note: The target character is 'C' (ASCII: 67).
 In each successful attack, the predicted character should be 'C' (ASCII: 67).
 ```
 
-In our previous experiments, we found that 
 
