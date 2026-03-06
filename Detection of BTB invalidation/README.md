@@ -36,7 +36,7 @@ Success rate: 99.10%
 ----------------------------------------
 Note: The target character is 'C' (ASCII: 67).
 In each successful attack, the predicted character should be 'C' (ASCII: 67).
-
+```
 
 
 In `detetion_invalidation.c`, we insert `syscall` to invalidate the BTB.
@@ -49,7 +49,7 @@ make
 sudo ./detection
 ```
 
-```
+
 Expected results are as follows. 
 ```
 Target character: 'C' (ASCII: 67)
