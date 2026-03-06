@@ -37,6 +37,31 @@ Note: The target character is 'C' (ASCII: 67).
 In each successful attack, the predicted character should be 'C' (ASCII: 67).
 
 ```
+Expected results are as follows. 
+```
+Target character: 'C' (ASCII: 67)
+Total attempts: 1000
+----------------------------------------
+Progress: 100/1000 attempts completed. Current success rate: 2.00%
+Progress: 200/1000 attempts completed. Current success rate: 1.00%
+Progress: 300/1000 attempts completed. Current success rate: 0.67%
+Progress: 400/1000 attempts completed. Current success rate: 0.50%
+Progress: 500/1000 attempts completed. Current success rate: 0.40%
+Progress: 600/1000 attempts completed. Current success rate: 0.33%
+Progress: 700/1000 attempts completed. Current success rate: 0.29%
+Progress: 800/1000 attempts completed. Current success rate: 0.25%
+Progress: 900/1000 attempts completed. Current success rate: 0.22%
+Progress: 1000/1000 attempts completed. Current success rate: 0.20%
+----------------------------------------
+Attack completed!
+Total attempts: 1000
+Successful attempts: 2
+Success rate: 0.20%
+----------------------------------------
+Note: The target character is 'C' (ASCII: 67).
+In each successful attack, the predicted character should be 'C' (ASCII: 67).
+```
+
 
 In our previous experiments, we found that 
 
