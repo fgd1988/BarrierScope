@@ -31,9 +31,9 @@ Throughout our experiments, we successfully evaluated our implementations on the
 ## Materials
 This repository contains the following materials:
 
-- **E1-Detection of BTB invalidation**: contains the code that we apply BarrierScope to detect BTB invalidation.
-- **E2-Keystroke Detection**: contains the code that we use BarrierScope to detect keystroke.
-- **E3-Website Fingerprinting**: contains the code that we rely on BarrierScope to fingerprint websites.
+- **Detection of BTB invalidation**: contains the code that we apply BarrierScope to detect BTB invalidation.
+- **Keystroke**: contains the code that we use BarrierScope to detect keystroke.
+- **Website Fingerprinting**: contains the code that we rely on BarrierScope to fingerprint websites.
 
 ## Contact
 
