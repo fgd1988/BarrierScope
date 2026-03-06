@@ -136,7 +136,7 @@ int main() {
     int predicted_char;             
     char *addr_to_read = secret;    
 
-    printf("=== Spectre v2 Attack POC ===\n");
+    printf("=== Detection of BTB invalidation ===\n");
     printf("Target character: '%c' (ASCII: %d)\n", TARGET_CHAR, TARGET_CHAR);
     printf("Total attempts: %d\n", TOTAL_ATTEMPTS);
     printf("----------------------------------------\n");
