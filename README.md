@@ -27,7 +27,6 @@ Throughout our experiments, we successfully evaluated our implementations on the
 | Xiaomi Air 13.3 | Intel Core i5-8250U  | Linux 5.15.0  |
 
 
-*Note: The enhanced Spectral attack relies on the UMONITOR/UMWAIT instructions that are only available on Intel latest core processors*
 
 ## Materials
 This repository contains the following materials:
