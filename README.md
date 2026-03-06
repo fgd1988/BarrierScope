@@ -21,8 +21,6 @@ In order to run the experiments and proof-of-concepts, the following prerequisit
 ### Hardware dependencies
 Throughout our experiments, we successfully evaluated our implementations on the following environments. We recommend to test SegScope on bare-metal machines.
 
-| Machine                     | CPU                     | Kernel         |
-| Honor Magicbook 16 Pro      | AMD Ryzen 7 5800H        | Linux 5.15.0   |
 
 | Machine         | CPU                  | Kernel        |
 |-----------------|----------------------|---------------|
@@ -34,9 +32,9 @@ Throughout our experiments, we successfully evaluated our implementations on the
 ## Materials
 This repository contains the following materials:
 
-- **E1-Detection of BTB invalidation**: contains the code that we apply BarrierScope to detect interrupts while opening a website.
-- **E2-Keystroke Detection**: contains the code that we use BarrierScope to enhance a non-interrupt side channel attack (i.e., [spectral](https://example.com)).
-- **E3-Website Fingerprinting**: contains the code that we rely on BarrierScope-based timer to derandomize KASLR.
+- **E1-Detection of BTB invalidation**: contains the code that we apply BarrierScope to detect BTB invalidation.
+- **E2-Keystroke Detection**: contains the code that we use BarrierScope to detect keystroke.
+- **E3-Website Fingerprinting**: contains the code that we rely on BarrierScope to fingerprint websites.
 
 ## Contact
 
