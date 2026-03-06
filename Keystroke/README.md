@@ -1,6 +1,7 @@
 # Keystroke Detection
 
-Uses SegScope to perform a classic interrupt side channel attack (i.e., website fingerprinting).
+Uses BarrierScope to perform a classic interrupt side channel attack (i.e., website fingerprinting).
+We note that we do not directly infer text from our \name-based measurements but instead use them to determine the channel quality by comparing our measurements with the keystroke-timing ground truth. After obtaining the interrupt timing information, the attackers can use a series of orthogonal techniques to recover text\cite{song2001timing,Keystroke2017,qiukeytar,rauscher2024cross}. For instance, Song et al. \cite{song2001timing}, as this has become a standard but training-intense machine learning task. By leveraging the ability of Large Language Models (LLMs) to utilize contextual information and incorporate semantic understanding, KeyTAR~\cite{qiukeytar} shows the feasibility of reconstructing typed input from inter-keystroke timings.
 
 ## Install dependencies.
 ```bash
