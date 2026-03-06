@@ -1,13 +1,9 @@
 # Detection of BTB invalidation
 
-Uses BarrierScope to detect BTB invalidation. The BTB manipulations are performed by executing the jmp or ret instruction.
-In our attack code, we we placed \texttt{jmp} instructions for mistraining at the same virtual address in the attacker as in the victim process. 
-We chose \texttt{jmp} instruction for the reason that, unlike a return instruction, there were no adjacent operations that might un-evict the return address (e.g., by accessing the stack) and limit speculative execution. 
+Uses BarrierScope to detect BTB invalidation. The BTB manipulations are performed by executing the `jmp` or `ret` instruction.
+In our attack code, we we placed `jmp` instructions for mistraining at the same virtual address in the attacker as in the victim process. 
+We chose `jmp` instruction for the reason that, unlike a return instruction, there were no adjacent operations that might un-evict the return address (e.g., by accessing the stack) and limit speculative execution. 
 In order to get the victim to speculatively execute the gadget, we caused the memory location containing the jump destination to be uncached. In addition, we mistrained the branch predictor to send speculative execution to the gadget.
-
-`jmp` or `ret` inst[...]
-
-`jmp` instructions f[...]
 
 ## Install dependencies.
 ```bash
